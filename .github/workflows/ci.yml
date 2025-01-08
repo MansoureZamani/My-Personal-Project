@@ -39,7 +39,7 @@ jobs:
       with:
         image: mansooreh26/mypersonalproject
         registry: docker.io
-        dockerfile: Dockerfile.ci
+        dockerfile: Dockerfile
         tags: v0.0
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
