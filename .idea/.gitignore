@@ -5,3 +5,12 @@ build
 .project
 .settings
 .idea
+/.name
+/compiler.xml
+/gradle.xml
+/jarRepositories.xml
+/misc.xml
+/modules.xml
+/modules/MyDemoProject.main.iml
+/vcs.xml
+/workspace.xml
