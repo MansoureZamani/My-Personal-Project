@@ -4,6 +4,5 @@ EXPOSE 8080
 
 COPY ./build/libs/*.jar /usr/app/
 WORKDIR /usr/app
-RUN ls -R /usr/src
 
 ENTRYPOINT ["java", "-jar", "MyDemoProject-0.0.1-SNAPSHOT-plain.jar"]
