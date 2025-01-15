@@ -27,11 +27,11 @@ jobs:
         run: chmod +x gradlew
 
       - name: Build with Gradle Wrapper
-        run: ./gradlew build
+        run: ./gradlew clean build
 
   docker-build:
     needs: build
-    if: github.event.pull_request.merged == true || github.ref == 'refs/heads/master'
+#    if: github.event.pull_request.merged == true || github.ref == 'refs/heads/master'
     runs-on: ubuntu-latest
 
     steps:
