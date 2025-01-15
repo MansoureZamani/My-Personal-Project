@@ -56,4 +56,3 @@ delete-branch:
               https://api.github.com/repos/${{ github.repository }}/git/refs/heads/$branch
           fi
         done
-
