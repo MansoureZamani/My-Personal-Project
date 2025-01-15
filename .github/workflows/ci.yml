@@ -29,11 +29,11 @@ jobs:
       - name: Build with Gradle Wrapper
         run: ./gradlew clean build
 
-      - name: Checkout code
-        uses: actions/checkout@v4
+      - name: List build artifacts
+        run: ls -R build/libs
 
       - name: Build & Push Docker Image
-        if: github.event.pull_request.merged == true || github.ref == 'refs/heads/master'
+#        if: github.event.pull_request.merged == true || github.ref == 'refs/heads/master'
         uses: mr-smithers-excellent/docker-build-push@v6
         with:
           image: mansooreh26/mypersonalproject
