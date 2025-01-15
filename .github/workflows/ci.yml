@@ -29,8 +29,8 @@ jobs:
       - name: Build with Gradle Wrapper
         run: ./gradlew clean build
 
-      - name: Checkout code
-        uses: actions/checkout@v4
+      - name: List build artifacts
+        run: ls -R build/libs
 
       - name: Build & Push Docker Image
         if: github.event.pull_request.merged == true || github.ref == 'refs/heads/master'
