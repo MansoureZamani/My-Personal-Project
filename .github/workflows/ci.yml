@@ -27,18 +27,13 @@ jobs:
         run: chmod +x gradlew
 
       - name: Build with Gradle Wrapper
-        run: ./gradlew build
+        run: ./gradlew clean build
 
-  docker-build:
-    needs: build
-    if: github.event.pull_request.merged == true || github.ref == 'refs/heads/master'
-    runs-on: ubuntu-latest
-
-    steps:
       - name: Checkout code
         uses: actions/checkout@v4
 
       - name: Build & Push Docker Image
+        if: github.event.pull_request.merged == true || github.ref == 'refs/heads/master'
         uses: mr-smithers-excellent/docker-build-push@v6
         with:
           image: mansooreh26/mypersonalproject
@@ -49,7 +44,7 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
 
   delete-branch:
-    needs: [build, docker-build]
+    needs: [build]
     if: github.event.pull_request.merged == true || github.ref == 'refs/heads/master'
     runs-on: ubuntu-latest
     permissions:
